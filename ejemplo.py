@@ -63,5 +63,7 @@ while True:
     else:
         print('Opcion invalida')
 
+def suma(a,b):
+    return a+b
 
     

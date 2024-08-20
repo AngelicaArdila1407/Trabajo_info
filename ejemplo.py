@@ -22,10 +22,16 @@ class Paciente:
         self.__genero = g 
     def asignarCedula(self,c):
         self.__cedula = c 
-class Sistema:
+class Sistema():
     def __init__(self):
         self.__lista_pacientes = []
-        self.__numero_pacientes = len(self.__lista_pacientes)
+    def verificarPaciente(self,cedula):
+        encontrado= False
+        for p in self.__lista_pacientes:
+            if cedula == p.verCedula():
+                encontrado = True
+                break
+        return encontrado
     def ingresarPacientes(self):
         nombre= input('Ingrese el nombre: ')
         cedula= int(input('Ingrese la cedula: '))
@@ -60,6 +66,7 @@ while True:
         mi_sistema.verDatosPaciente()
     elif opcion== 4:
         break 
+
     else:
         print('Opcion invalida')
 
